@@ -5,7 +5,7 @@ import createError from 'http-errors'
 import nunjucksSetup from './utils/nunjucksSetup'
 import errorHandler from './errorHandler'
 import { appInsightsMiddleware } from './utils/azureAppInsights'
-import authorisationMiddleware from './middleware/authorisationMiddleware'
+// import authorisationMiddleware from './middleware/authorisationMiddleware'
 import { metricsMiddleware } from './monitoring/metricsApp'
 
 // import setUpAuthentication from './middleware/setUpAuthentication'

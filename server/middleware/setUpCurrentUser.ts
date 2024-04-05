@@ -1,6 +1,6 @@
 import { Router } from 'express'
-import auth from '../authentication/auth'
-import tokenVerifier from '../data/tokenVerification'
+// import auth from '../authentication/auth'
+// import tokenVerifier from '../data/tokenVerification'
 import populateCurrentUser from './populateCurrentUser'
 import type { Services } from '../services'
 
