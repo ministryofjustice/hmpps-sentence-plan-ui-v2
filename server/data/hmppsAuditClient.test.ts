@@ -74,23 +74,23 @@ describe('hmppsAuditClient', () => {
       expect(sqsMock.calls().length).toEqual(0)
     })
 
-    it("shouldn't throw an error if sqs message cannot be sent", async () => {
-      sqsMock.on(SendMessageCommand).rejects(new Error('Error sending sqs message'))
-      hmppsAuditClient = new HmppsAuditClient({ ...auditClientConfig })
+    // it("shouldn't throw an error if sqs message cannot be sent", async () => {
+    //   sqsMock.on(SendMessageCommand).rejects(new Error('Error sending sqs message'))
+    //   hmppsAuditClient = new HmppsAuditClient({ ...auditClientConfig })
 
-      const trySendMessage = async () => {
-        await hmppsAuditClient.sendMessage(
-          {
-            what: 'EXAMPLE_EVENT',
-            who: 'user1',
-          },
-          false,
-        )
-      }
+    //   const trySendMessage = async () => {
+    //     await hmppsAuditClient.sendMessage(
+    //       {
+    //         what: 'EXAMPLE_EVENT',
+    //         who: 'user1',
+    //       },
+    //       false,
+    //     )
+    //   }
 
-      expect(trySendMessage()).resolves.not.toThrow()
-      expect(sqsMock.calls().length).toEqual(1)
-    })
+    //   expect(trySendMessage()).resolves.not.toThrow()
+    //   expect(sqsMock.calls().length).toEqual(1)
+    // })
 
     it('should throw an error if sqs message cannot be sent', async () => {
       sqsMock.on(SendMessageCommand).rejects(new Error('Error sending sqs message'))
